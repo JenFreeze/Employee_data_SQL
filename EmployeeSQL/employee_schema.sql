@@ -40,9 +40,8 @@ CREATE TABLE Dept_emp (
 -- Create department managers table, depends on employees and departments tables
 CREATE TABLE Dept_manager (
     dept_no VARCHAR(4) NOT NULL,
-    emp_no INTEGER NOT NULL,
-    PRIMARY KEY (dept_no, emp_no),
-	FOREIGN KEY (dept_no) REFERENCES Departments(dept_no),
+    emp_no INTEGER PRIMARY KEY NOT NULL,
+    FOREIGN KEY (dept_no) REFERENCES Departments(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
 );
 
@@ -62,3 +61,5 @@ SELECT * FROM Departments;
 SELECT * FROM Dept_emp;
 SELECT * FROM Dept_manager;
 SELECT * FROM Salaries;
+
+-- CSV files imported to each table by right-clicking table, then Import/Export Data 
